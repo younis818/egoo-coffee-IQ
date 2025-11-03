@@ -1,0 +1,1534 @@
+*{
+    font-family:  "Miniver", cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  z-index: 900;
+  transition: 0.3s;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* header section css */
+header {
+  background: #fffdf9;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header img {
+  width: 150px;
+  height: auto;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+  transition: all 0.4s ease;
+}
+
+.list a {
+  position: relative;
+  color: #5a2a0a;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 20px 25px;
+  border-radius: 18px;
+  background-color: rgba(233, 224, 209, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  transition: all 0.5s ease-in-out;
+  text-transform: capitalize;
+  margin: 0 30px 0 30px;
+  overflow: hidden;
+  z-index: 1;
+}
+.list a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: transform 0.6s ease-in-out;
+  z-index: -1;
+}
+
+.list a:hover {
+  color: #fff;
+  background-color: rgba(90, 42, 10, 0.8);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.4);
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.2); 
+}
+.list a:hover::before {
+  transform: translateX(200%) skewX(-20deg);
+}
+.icon-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-header i {
+  font-size: 20px;
+  color: rgb(49, 46, 46);
+  transition: all 0.3s ease;
+}
+
+.icon-header i:hover {
+  background: linear-gradient(90deg, #5a2a0a, #c27c4a);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.2);
+}
+
+.menu-btn {
+  display: none;
+  font-size: 28px;
+  color: #5a2a0a;
+  cursor: pointer;
+}
+
+
+/* background section css */
+.hero-section {
+position: relative;
+width: 100%;
+height: 100vh; 
+background-image: url('img/background.jpg'); 
+background-size: cover; 
+background-position: right; 
+background-repeat: no-repeat; 
+display: flex; 
+align-items: center; 
+justify-content: flex-start; 
+text-align: left; 
+padding-left: 30px; 
+padding-right: 30px; 
+
+}
+
+.text-back {
+position: relative; 
+z-index: 2; 
+color: rgb(230, 230, 230);
+max-width: 1700px; 
+padding: 20px 0; 
+}
+
+.text-back h1 {
+color: #a1ecc6;
+font-size: 100px;
+margin-top: 90px;
+margin-bottom: 30px;
+font-weight: 900;
+line-height: 1.1; 
+text-shadow: 3px 3px 6px rgba(0,0,0,0.7); 
+}
+
+.text-back p {
+    color: #d7d8d8;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 99px; 
+    line-height: 1.6; 
+    transition: all .42s;
+}
+.text-back p:hover {
+    color: #a9c6eb;
+}
+
+.back-btn {
+    display: flex; 
+    gap: 30px; 
+    justify-content: flex-start; 
+}
+
+.back-btn a {
+    font-size: 30px;
+    background: black;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block; 
+}
+
+.back-btn a:hover {
+    background: #660303;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* juices section css */
+.juices{
+    background-color: #fff7ec;
+    text-align: center;
+    padding: 80px 20px;
+}
+.juices h2{
+    font-size: 2.5rem;
+    color: #c96b00;
+    margin-bottom: 50px;
+    font-family: "Miniver", cursive;
+    letter-spacing: 1px;
+}
+.juice-con{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 10px;
+}
+.juice-card{
+    width: 100%;
+    height: auto;
+    flex: 1 1 200px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+.juice-card img{
+    height: 200px;
+    object-fit: cover;
+}
+.juice-card h3{
+    color: #bb6e22;
+    margin: 15px 0 25px;
+}
+.juice-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2)
+}
+.juice-card p{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    color: #6d6255;
+    margin-bottom: 9px;
+}
+.order-btn{
+    flex-wrap: wrap;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    margin-bottom: 7px;
+    background-color: #8b491d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.juice-card .order-btn:hover{
+    opacity: 1;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #683e04;
+}
+
+/* drinks section css */
+.drinks{
+    background: #fff7ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+  padding: 60px 30px;
+}
+.drinks h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  margin-top: 240px;
+  color: #da7b44;
+  text-align: center;
+}
+.drink-card{
+    flex: 1 1 200px;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-width: 180px;
+    
+    margin-right: 10px;
+}
+.drink-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.drink-card img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffd902;
+    margin-bottom: 15px;
+}
+.drink-card h3{
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+.order-butn{
+    background-color: #693d09;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.5s, transform 0.5s;
+}
+.order-butn:hover{
+    opacity: 1;
+    background-color: #ce7c1f;
+    transform: scale(1.05);
+}
+
+/* coffee section css */
+.coffee{
+    background-color: #fef7f0;
+}
+.coffee-cont{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.coffee-card{
+    position: relative;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 15px;
+    padding: 0px 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.coffee-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+.coffee-card img{
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+.coffee-card img:hover{
+    transform: scale(1.08);
+}
+.coffee-cont{
+    padding: 15px;
+   display: grid;
+   gap: 40px;
+   grid-template-columns: repeat(4, 1fr);
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+.coffee h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    color: #c96b00;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.coffee-cont h2{
+    margin: 5px 0;
+    font-size: 20px;
+}
+.coffee-cont p{
+    font-size: 14px;
+    color: #585656;
+    margin-top: 20px;
+}
+.order-btnn{
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+    padding: 10px 20px;
+    background-color: #6f4e37;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.coffee-card .order-btnn:hover{
+    opacity: 1;
+    display: inline-block;
+    transform: translateY(0);
+    background-color: #573a26;
+}
+
+/* testimonials section css */
+.testimonials{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px 20px;
+    background-color: #fdf7f0;
+    flex-wrap: wrap;
+}
+
+.testi-card{
+    text-align: center;
+    max-width: 220px;
+    padding: 30px;
+    margin-top: 290px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.testi-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.testi-card img{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffd700;
+}
+
+/* sevice section css */
+.service{
+    padding: 100px 20px;
+    background: #fff9f4;
+    text-align: center;
+    width: 100%;
+    height: 60vh;
+}
+.service .serv-title{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #6b3e26;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.serv-cont{
+    display: flex;
+    flex: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.serv-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    font-size: 600px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    padding: 50px;
+    width: calc(48% - 20px);
+    min-height: 400px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.serv-card i{
+    font-size: 5rem;
+    color: #9b2632;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+.serv-card h3{
+    font-size: 1.4rem;
+    color: #3e2c1c;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.serv-card p{
+    font-size: 0.95rem;
+    color: #5b4a3f;
+    line-height: 1.5;
+}
+.serv-card:hover{
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* About section css */
+.about{
+    padding: 100px 20px;
+    background: #fdf4ee;
+}
+.about-cont{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+.about-img img{
+    margin-left: 1500px;
+    width: 800px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.about-text{
+    max-width: 600px;
+    margin-right: 1500px;
+    margin-top: -1000px;
+}
+.about-text h2{
+    white-space: nowrap;
+    font-size: 6rem;
+    color: #6b6e26;
+    margin-bottom: 25px;
+}
+.about-text p{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #5b4a3f;
+    margin-bottom: 40px;
+}
+.about-text .btn{
+    display: inline-block;
+    padding: 15px 35px;
+    background: #d97b48;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.about-text .btn:hover{
+    background: #b86735;
+    transform: translateY(-5px);
+}
+
+/* contact section css */
+.contact{
+    padding: 100px 20px;
+    background: #fdf4ee;
+    text-align: center;
+}
+.contact-cont{
+    max-width: 900px;
+    margin: 0 auto;
+}
+.contact h2{
+    font-size: 3rem;
+    color: #6b3e26;
+    margin-bottom: 20px;
+}
+.contact p{
+    font-size: 1.2rem;
+    color: #5b4a3f;
+    margin-bottom: 50px;
+}
+.contact-boxes{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-info{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: #3e2c1c;
+}
+.contact-info i{
+    color: #be6e42;
+    font-size: 1.5rem;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact-form input, .contact-form textarea{
+    padding: 20px 25px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: none;
+    transition: all 0.3s ease;
+}
+.contact-form input:hover, .contact-form textarea:hover{
+    border-color: #d97b48;
+    box-shadow: 0 8px 20px rgba(217, 123, 72, 0.3);
+    transform: translateY(-3px);
+}
+.contact-form .btn{
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    background: #d97b48;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.contact-form .btn:hover{
+    background: #b86735;
+    box-shadow: 0 8px 20px rgba(217, 123, 72, 0.3);
+    transform: translateY(-3px);
+}
+
+/* footer section css */
+.footer {
+    background-color: #3e2c1c; 
+    color: #fdf7f0; 
+    padding: 60px 20px 20px;
+    font-family: "Miniver", cursive;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    text-align: left;
+}
+
+.footer-brand, .footer-links, .footer-contact {
+    flex: 1 1 220px; 
+    margin-bottom: 30px;
+}
+
+.footer-brand img {
+    width: 180px; 
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #d4c0ae;
+}
+
+.social-icons a {
+    color: #fdf7f0;
+    font-size: 1.4rem;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #d97b48; 
+    transform: scale(1.2);
+}
+
+.footer-links h3, .footer-contact h3 {
+    font-size: 1.5rem;
+    color: #d97b48; 
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.footer-links h3::after, .footer-contact h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 50px;
+    height: 3px;
+    background-color: #fdf7f0;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+    color: #d4c0ae;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #fdf7f0;
+    text-decoration: underline;
+}
+
+.footer-contact p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #d4c0ae;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-contact p i {
+    color: #d97b48; /* Accent color for icons */
+    font-size: 1.2rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #a09080;
+}
+
+
+@media (max-width: 1200px) {
+header {
+    padding: 10px 30px;
+}
+.list a {
+    padding: 15px 20px;
+    font-size: 18px;
+    margin: 0 15px;
+}
+.icon-header{
+    margin-right: 60px;
+}
+.juices {
+    padding: 60px 10px;
+}
+.juices h2 {
+    font-size: 2.1rem;
+    margin-bottom: 40px;
+}
+.juice-con {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 15px;
+    max-width: 1000px;
+}
+.juice-card {
+    padding-bottom: 12px;
+}
+.juice-card img {
+    height: 160px;
+    padding: 8px;
+}
+.juice-card h3 {
+    font-size: 1.3rem;
+}
+.juice-card p {
+    font-size: 12px;
+    padding: 0 10px;
+}
+.order-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+    max-width: 150px;
+}
+    .drinks {
+    padding: 40px 10px;
+    gap: 20px;
+    max-width: 1000px;
+}
+    .drink-card {
+    flex-basis: 170px; 
+    max-width: 220px;
+    min-width: 150px;
+    padding: 15px;
+}
+    .drink-card img {
+    width: 160px;
+    height: 160px;
+}
+    .drink-card h3 {
+    font-size: 1.2em;
+}
+    .order-butn {
+    padding: 8px 16px;
+    font-size: 12px;
+    max-width: 150px;
+}
+    .coffee-cont {
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    padding: 40px 15px;
+}
+    .coffee-card {
+    padding: 0px 30px; 
+}
+    .coffee h1 {
+    font-size: 2rem; 
+}
+    .testimonials h1 {
+    font-size: 3.5rem;
+    margin-bottom: 35px;
+}
+    .testi-cards-container {
+    gap: 25px;
+    padding: 0 15px; 
+}
+    .testi-card {
+    max-width: 200px; 
+    padding: 25px;
+}
+    .testi-card img {
+    width: 150px;
+    height: 150px;
+}
+}
+
+@media (max-width: 992px) {
+header {
+    padding: 10px 20px;
+}
+header img {
+    width: 120px;
+}
+.list {
+    gap: 15px;
+}
+.list a {
+    font-size: 16px;
+    padding: 12px 18px;
+    margin: 0 10px;
+}
+.icon-header i {
+    font-size: 18px;
+}
+.juices {
+    padding: 50px 10px;
+}
+.juices h2 {
+    font-size: 2rem;
+    margin-bottom: 35px;
+}
+.juice-con {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+    gap: 12px;
+}
+.juice-card img {
+    height: 140px;
+    padding: 5px;
+}
+.juice-card h3 {
+    font-size: 1.2rem;
+}
+.juice-card p {
+    font-size: 11px;
+}
+.order-btn {
+    padding: 7px 14px;
+    font-size: 11px;
+    max-width: 140px;
+}
+.drinks {
+    padding: 35px 10px;
+    gap: 15px;
+}
+.drink-card {
+    flex-basis: 150px; 
+    max-width: 200px;
+    min-width: 140px;
+    padding: 12px;
+}
+.drink-card img {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 10px;
+}
+.drink-card h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+.order-butn {
+    padding: 7px 14px;
+    font-size: 11px;
+    max-width: 130px;
+}
+.coffee-cont {
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
+    padding: 30px 10px;
+}
+.coffee-card {
+    padding: 0px 20px;
+}
+.coffee h1 {
+    font-size: 1.8rem;
+}
+.testimonials h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+.testi-cards-container {
+    gap: 20px;
+    padding: 0 10px;
+}
+.testi-card {
+    max-width: 180px;
+    padding: 20px;
+}
+.testi-card img {
+    width: 130px;
+    height: 130px;
+}
+.testi-card h3 {
+    font-size: 1.3rem;
+}
+.testi-card .message {
+    font-size: 0.9em;
+}
+.service .serv-title {
+    font-size: 2rem; 
+    margin-bottom: 35px;
+}
+.serv-cont {
+    gap: 25px;
+    padding: 0 10px;
+    max-width: 700px; 
+}
+.serv-card {
+    width: calc(50% - 12.5px); 
+    min-height: 320px;
+    padding: 35px;
+}
+.serv-card i {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+.serv-card h3 {
+    font-size: 1.25rem;
+}
+.serv-card p {
+    font-size: 0.88rem;
+}
+.about {
+    padding: 80px 15px;
+}
+.about-img img {
+    max-width: 400px; 
+}
+.about-text h2 {
+    font-size: 2.8rem;
+}
+.about-text p {
+    font-size: 1.1rem;
+}
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+    background-position: center; 
+    padding-left: 15px; 
+    padding-right: 15px;
+    text-align: center; 
+    justify-content: center; 
+}
+
+.text-back {
+    max-width: 100%; 
+    padding: 10px; 
+}
+.text-back h1 {
+    font-size: 48px; 
+    margin-top: 50px; 
+    margin-bottom: 15px; 
+}
+.text-back p {
+    font-size: 16px; 
+    margin-bottom: 30px;  
+    display: none;
+}
+.back-btn {
+    flex-direction: column; 
+    gap: 15px; 
+    align-items: center; 
+    width: 100%; 
+}
+.back-btn a {
+    font-size: 20px; 
+    padding: 10px 20px; 
+    width: 80%; 
+    max-width: 250px; 
+    display: block; 
+}
+.menu-btn {
+    display: block; 
+}
+.list {
+    position: absolute;
+    top: 100%; 
+    right: -100%; 
+    width: 250px; 
+    height: 100vh; 
+    background-color: #fffdf9;
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 20px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+     z-index: 950; 
+}
+
+.list.active {
+    right: 0; 
+}
+
+.list a {
+    width: 100%; 
+    margin: 10px 0; 
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 18px;
+    border-radius: 10px; 
+}
+
+.icon-header {
+    position: relative; 
+    gap: 8px;
+}
+.juices {
+    padding: 40px 8px;
+}
+.juices h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+.juice-con {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); 
+    gap: 10px;
+}
+.juice-card {
+    padding-bottom: 10px;
+}
+.juice-card img {
+    height: 120px;
+    margin-bottom: 5px;
+}
+.juice-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0 8px;
+}
+.juice-card p {
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+.order-btn {
+    padding: 6px 12px;
+    font-size: 10px;
+    max-width: 120px;
+}
+.drinks {
+    padding: 30px 8px;
+    gap: 10px;
+}
+.drink-card {
+    flex-basis: calc(50% - 15px); 
+    max-width: calc(50% - 15px); 
+    min-width: 120px;
+    padding: 10px;
+}
+.drink-card img {
+    width: 110px;
+    height: 110px;
+    border-width: 2px; 
+}
+.drink-card h3 {
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+.order-butn {
+    padding: 6px 12px;
+    font-size: 10px;
+    width: 90%;
+    max-width: 110px;
+}
+.coffee-cont {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+    padding: 20px 10px;
+}
+.coffee-card {
+    padding: 0px 15px;
+}
+.coffee h1 {
+    font-size: 1.6rem;
+}
+.order-btnn {
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.testimonials h1 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+.testi-cards-container {
+    gap: 15px;
+    padding: 0 10px;
+}
+.testi-card {
+    max-width: 45%; 
+    flex-basis: calc(50% - 15px); 
+    padding: 15px;
+}
+.testi-card img {
+    width: 100px;
+    height: 100px;
+}
+.testi-card h3 {
+    font-size: 1.2rem;
+}
+.testi-card .stars {
+    font-size: 1em;
+}
+.testi-card .message {
+    font-size: 0.85em;
+}
+.service {
+    padding: 60px 10px;
+}
+.service .serv-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+.serv-cont {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+    max-width: 500px; 
+}
+.serv-card {
+    width: 100%; 
+    max-width: 400px; 
+    margin: 0 auto; 
+    min-height: 280px;
+    padding: 30px;
+}
+.serv-card i {
+    font-size: 3rem;
+    margin-bottom: 18px;
+}
+.serv-card h3 {
+    font-size: 1.15rem;
+}
+.serv-card p {
+    font-size: 0.85rem;
+}
+.about {
+    padding: 60px 10px;
+}
+.about-img img {
+    max-width: 350px;
+}
+.about-text h2 {
+    font-size: 2.2rem;
+}
+.about-text p {
+    font-size: 1rem;
+}
+.about-text .btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+}
+.footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-brand, .footer-links, .footer-contact {
+    flex: 1 1 100%; 
+}
+
+.footer-links h3::after, .footer-contact h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.social-icons {
+    justify-content: center;
+    display: flex;
+}
+}
+
+@media (max-width: 480px) {
+header {
+    padding: 10px 15px;
+}
+header img {
+    width: 100px;
+}
+.icon-header {
+    gap: 5px;
+}
+.icon-header i {
+    font-size: 16px;
+}
+.list {
+    width: 100%; 
+}
+.text-back h1 {
+    font-size: 38px; 
+}
+
+.text-back p {
+    font-size: 14px; 
+}
+
+.back-btn a {
+    font-size: 18px; 
+    padding: 8px 15px; 
+    width: 90%;
+}
+.hero-section {
+    height: 100vh;
+    padding-top: 90px;
+    background-position: right;
+}
+.back-btn {
+    gap: 10px;
+}
+.juices {
+    padding: 30px 5px;
+}
+.juices h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+}
+.juice-con {
+    grid-template-columns: 1fr; 
+    gap: 10px;
+}
+.juice-card {
+    max-width: 250px; 
+    margin: 0 auto;
+    padding-bottom: 8px;
+}
+.juice-card img {
+    height: 150px; 
+    margin-bottom: 5px;
+}
+.juice-card h3 {
+    font-size: 1.2rem;
+}
+.juice-card p {
+    font-size: 11px;
+}
+.order-btn {
+    font-size: 12px;
+    padding: 8px 15px;
+    max-width: 150px;
+}
+.drinks {
+    padding: 20px 5px;
+    gap: 8px;
+}
+.drink-card {
+    flex-basis: 100%; 
+    max-width: 250px; 
+    margin: 0 auto; 
+    padding: 15px;
+}
+.drink-card img {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 12px;
+}
+.drink-card h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+.order-butn {
+    font-size: 12px;
+    padding: 8px 15px;
+    max-width: 140px;
+}
+.coffee-cont {
+    gap: 8px; 
+    padding: 10px 5px; 
+}
+.coffee-card {
+    padding: 0px 8px; 
+}
+.coffee-card h2 {
+    font-size: 18px; 
+}
+.coffee-card p {
+    font-size: 12px; 
+}
+.order-btnn {
+    padding: 8px 15px; 
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+.coffee h1 {
+    font-size: 1.2rem; 
+    margin-bottom: 15px;
+}
+.testimonials h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+.testi-card {
+    max-width: 95%; 
+    padding: 8px;
+}
+.testi-card img {
+    width: 70px;
+    height: 70px;
+}
+.testi-card h3 {
+    font-size: 1rem;
+}
+.testi-card .stars {
+    font-size: 0.8em;
+}
+.testi-card .message {
+    font-size: 0.75em;
+}
+.service {
+    padding: 80px 15px;
+    height: auto;
+}
+.service .serv-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+.serv-cont {
+    gap: 30px;
+    padding: 0 15px;
+    max-width: 1000px; 
+}
+.serv-card {
+    width: calc(50% - 15px); 
+    min-height: 350px;
+    padding: 40px;
+}
+.serv-card i {
+    font-size: 4rem;
+    margin-bottom: 25px;
+}
+.serv-card h3 {
+    font-size: 1.3rem;
+}
+.serv-card p {
+    font-size: 0.9rem;
+}
+.about {
+    padding: 40px 10px;
+}
+.about-img img {
+    max-width: 280px;
+}
+.about-text h2 {
+    font-size: 1.8rem;
+}
+.about-text p {
+    font-size: 0.9rem;
+}
+.about-text .btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+}
+
+}
+@media (max-width: 1400px) {
+.text-back h1 {
+    font-size: 90px;
+}
+.text-back p {
+    font-size: 20px;
+    margin-bottom: 70px;
+}
+.back-btn a {
+    font-size: 28px;
+    padding: 10px 22px;
+}
+.juices {
+    padding: 70px 15px;
+}
+.juices h2 {
+    font-size: 2.3rem;
+    margin-bottom: 45px;
+}
+.juice-con {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+    max-width: 1200px;
+}
+.juice-card img {
+    height: 180px;
+}
+.juice-card h3 {
+    font-size: 1.4rem;
+}
+.juice-card p {
+    font-size: 13px;
+}
+.order-btn {
+    padding: 9px 18px;
+    font-size: 13px;
+    max-width: 160px;
+}
+.drinks {
+    padding: 45px 15px;
+    gap: 25px;
+    max-width: 1200px;
+}
+.drink-card {
+    flex-basis: 190px;
+    max-width: 240px;
+    min-width: 170px;
+    padding: 18px;
+}
+.drink-card img {
+    width: 180px;
+    height: 180px;
+}
+.drink-card h3 {
+    font-size: 1.25em;
+}
+.order-butn {
+    padding: 9px 18px;
+    font-size: 13px;
+    max-width: 170px;
+}
+.service {
+    padding: 80px 15px;
+    height: auto;
+}
+.service .serv-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+.serv-cont {
+    gap: 30px;
+    padding: 0 15px;
+    max-width: 1000px; 
+}
+.serv-card {
+    width: calc(50% - 15px); 
+    min-height: 350px;
+    padding: 40px;
+}
+.serv-card i {
+    font-size: 4rem;
+    margin-bottom: 25px;
+}
+.serv-card h3 {
+    font-size: 1.3rem;
+}
+.serv-card p {
+    font-size: 0.9rem;
+}
+.about-img img {
+    margin-left: 0; 
+    width: 100%; 
+    max-width: 500px; 
+    margin-right: auto; 
+    margin-left: auto;
+}
+.about-text {
+    margin-right: 0; 
+    margin-top: 0; 
+    max-width: 100%; 
+    padding: 0 20px; 
+    text-align: center; 
+}
+.about-text h2 {
+    font-size: 3.5rem; 
+    white-space: normal; 
+}
+.about-text p {
+    font-size: 1.2rem;
+}
+.about-cont {
+    flex-direction: column; 
+    gap: 40px;
+    padding: 0 15px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
